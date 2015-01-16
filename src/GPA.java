@@ -12,31 +12,28 @@ public class GPA
 			System.out.println("Welcome to GPA. Let's calculate your GPA.");
 			System.out.println("=========================================\n\n");
 
-			System.out.print("Firstly, we'll build your portfolio of classes.");
-			try {
-				Thread.sleep(500);
-				System.out.print(".");
-
-				Thread.sleep(500);
-				System.out.print(".");
-
-				Thread.sleep(200);
-				System.out.print("\n-------------------------------------------------\n\n");
-			} catch(InterruptedException ex) {
-				Thread.currentThread().interrupt();
-			}
+			System.out.print("Firstly, we'll build your portfolio of classes...");
+			System.out.print("\n-------------------------------------------------\n\n");
 
 			System.out.print("How many high school level courses have you taken so far? ");
 			Scanner keyboard = new Scanner(System.in);
 
-			int number_of_courses = keyboard.nextInt();
+			int courseCount = keyboard.nextInt();
 			ArrayList<Course> courses = new ArrayList<Course>();
 
-			for (int i = 1; i <= number_of_courses; i++) {
-				Course course = new Course();
-				
-				System.out.println("What was this course called? ");
+			for (int i = 1; i <= courseCount; i++) {
+				if (i == 1) {
+					System.out.println("\nLet's start with course #" + i + ".");
+				} else {
+					System.out.println("\nNow onto course #" + i + ".");
+				}
 
+				Course course = new Course();
+
+				System.out.print("What was this course called? ");
+				if (i == 1) keyboard.nextLine(); // Picks up inevitable newline character (\n). Not really sure why it only affects the first iteration, though...
+				String courseName = keyboard.nextLine();
+				course.setName(courseName);
 			}
 		} else { // Existing "user" with a portfolio.
 
