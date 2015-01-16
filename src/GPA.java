@@ -20,7 +20,8 @@ public class GPA
 
 			int courseCount = keyboard.nextInt();
 			ArrayList<Course> courses = new ArrayList<Course>();
-			ArrayList<Double> sixWeekAverages = new ArrayList<Double>();
+			ArrayList<Double> firstSemesterSixWeekAverages = new ArrayList<Double>();
+			ArrayList<Double> secondSemesterSixWeekAverages = new ArrayList<Double>();
 
 			for (int i = 1; i <= courseCount; i++) {
 				if (i == 1) {
@@ -39,8 +40,18 @@ public class GPA
 				for (int j = 1; j <= 6; j++) {
 					System.out.print(j + Number.getEnding(j) + " 6 weeks average? ");
 					double courseSixWeeksAverage = keyboard.nextDouble();
-					sixWeekAverages.add(courseSixWeeksAverage);
+
+					if (j == 1 || j == 2 || j == 3) {
+						firstSemesterSixWeekAverages.add(courseSixWeeksAverage);
+					}
+
+					if (j == 4 || j == 5 || j == 6) {
+						secondSemesterSixWeekAverages.add(courseSixWeeksAverage);
+					}
 				}
+
+				course.setFirstSemesterSixWeeksAverages(firstSemesterSixWeekAverages);
+				course.setSecondSemesterSixWeekAverages(secondSemesterSixWeekAverages);
 			}
 		} else { // Existing "user" with a portfolio.
 
