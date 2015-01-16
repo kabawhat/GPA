@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 
@@ -25,12 +26,16 @@ public class GPA
 				Thread.currentThread().interrupt();
 			}
 
-			System.out.print("How many high school level classes have you taken so far? ");
+			System.out.print("How many high school level courses have you taken so far? ");
 			Scanner keyboard = new Scanner(System.in);
 
-			int number_of_classes = keyboard.nextInt();
-			for (int i = 1; i <= number_of_classes; i++) {
-				System.out.println("What was this class called? ");
+			int number_of_courses = keyboard.nextInt();
+			ArrayList<Course> courses = new ArrayList<Course>();
+
+			for (int i = 1; i <= number_of_courses; i++) {
+				Course course = new Course();
+				
+				System.out.println("What was this course called? ");
 
 			}
 		} else { // Existing "user" with a portfolio.
