@@ -36,6 +36,6 @@ public class Course
 
 	public String toString()
 	{
-		return "Name: " + name + "\n1st Semester: " + firstSemesterSixWeekAverages.get(0) + "\t" + firstSemesterSixWeekAverages.get(1) + "\t" + firstSemesterSixWeekAverages.get(2) + "\n2nd Semester: " + secondSemesterSixWeekAverages.get(0) + "\t" + secondSemesterSixWeekAverages.get(1) + "\t" + secondSemesterSixWeekAverages.get(2);
+		return "Name: " + name + "\n1st Semester: " + firstSemesterSixWeekAverages.get(0) + ", " + firstSemesterSixWeekAverages.get(1) + ", " + firstSemesterSixWeekAverages.get(2) + "\n2nd Semester: " + secondSemesterSixWeekAverages.get(0) + ", " + secondSemesterSixWeekAverages.get(1) + ", " + secondSemesterSixWeekAverages.get(2);
 	}
 }
