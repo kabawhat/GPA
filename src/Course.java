@@ -6,13 +6,17 @@ public class Course
 {
 	private String name;
 	private ArrayList<Integer> firstSemesterSixWeekAverages;
+	private int midterm;
 	private ArrayList<Integer> secondSemesterSixWeekAverages;
+	private int finalExam;
 
 	public Course()
 	{
 		this.name                          = "";
 		this.firstSemesterSixWeekAverages  = new ArrayList<Integer>();
+		this.midterm                       = 0;
 		this.secondSemesterSixWeekAverages = new ArrayList<Integer>();
+		this.finalExam                     = 0;
 	}
 
 	public void setName(String name)
@@ -27,11 +31,21 @@ public class Course
 		}
 	}
 
+	public void setMidterm(double midterm)
+	{
+		this.midterm = (int) Math.round(midterm);
+	}
+
 	public void setSecondSemesterSixWeekAverages(ArrayList<Double> secondSemesterSixWeekAverages)
 	{
 		for (double sixWeekAverage : secondSemesterSixWeekAverages) {
 			this.secondSemesterSixWeekAverages.add((int) Math.round(sixWeekAverage));
 		}
+	}
+
+	public void setFinal(double finalExam)
+	{
+		this.finalExam = (int) Math.round(finalExam);
 	}
 
 	public String toString()

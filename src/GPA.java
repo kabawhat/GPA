@@ -38,6 +38,13 @@ public class GPA
 				course.setName(courseName);
 
 				for (int j = 1; j <= 6; j++) {
+					if (j == 4) {
+						System.out.print("Midterm? ");
+						double midterm = keyboard.nextDouble();
+
+						course.setMidterm(midterm);
+					}
+
 					System.out.print(j + Number.getEnding(j) + " 6 weeks average? ");
 					double courseSixWeeksAverage = keyboard.nextDouble();
 
@@ -49,6 +56,11 @@ public class GPA
 						secondSemesterSixWeekAverages.add(courseSixWeeksAverage);
 					}
 				}
+
+				System.out.print("Final? ");
+				double finalExam = keyboard.nextDouble();
+
+				course.setFinal(finalExam);
 
 				course.setFirstSemesterSixWeeksAverages(firstSemesterSixWeekAverages);
 				course.setSecondSemesterSixWeekAverages(secondSemesterSixWeekAverages);
