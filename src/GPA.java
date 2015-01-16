@@ -4,9 +4,9 @@ import java.io.File;
 
 public class GPA
 {
-	public static double getScaled(int unscaled)
+	public static double getScaled(String level, int unscaled)
 	{
-		
+
 	}
 
 	public static void main(String args[])
@@ -37,10 +37,15 @@ public class GPA
 
 				Course course = new Course();
 
-				System.out.print("What was this course called? ");
+				System.out.print("What is this course called? ");
 				keyboard.nextLine(); // Picks up inevitable newline character (\n).
 				String courseName = keyboard.nextLine();
 				course.setName(courseName);
+
+				System.out.print("Course level? (AP, IB, Pre-AP, On Level) ");
+				keyboard.nextLine(); // Picks up inevitable newline character (\n).
+				String courseLevel = keyboard.nextLine();
+				course.setLevel(courseLevel);
 
 				for (int j = 1; j <= 6; j++) {
 					if (j == 4) {

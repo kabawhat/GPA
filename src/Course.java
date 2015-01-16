@@ -5,6 +5,7 @@ import java.lang.Math;
 public class Course
 {
 	private String name;
+	private String level;
 	private ArrayList<Integer> firstSemesterSixWeekAverages;
 	private int midterm;
 	private ArrayList<Integer> secondSemesterSixWeekAverages;
@@ -13,6 +14,7 @@ public class Course
 	public Course()
 	{
 		this.name                          = "";
+		this.level                         = "";
 		this.firstSemesterSixWeekAverages  = new ArrayList<Integer>();
 		this.midterm                       = 0;
 		this.secondSemesterSixWeekAverages = new ArrayList<Integer>();
@@ -22,6 +24,26 @@ public class Course
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+
+	public void setLevel(String level)
+	{
+		switch (level.toLowerCase) {
+			case "ap": this.level      = "AP";
+				break;
+			case "ib": this.level      = "IB";
+				break;
+			case "pre ap":
+			case "pre-ap":
+			case "preap": this.level   = "Pre-AP";
+				break;
+			case "on level":
+			case "on-level":
+			case "onlevel": this.level = "On Level";
+				break;
+			default: this.level = "On Level";
+				break;
+		}
 	}
 
 	public void setFirstSemesterSixWeeksAverages(ArrayList<Double> firstSemesterSixWeeksAverages)
@@ -50,20 +72,20 @@ public class Course
 
 	public double getFirstSemesterGPA()
 	{
-		double average = (2 * (firstSemesterSixWeeksAverages.get(0) + firstSemesterSixWeeksAverages.get(1) + firstSemesterSixWeeksAverages(2)) + midterm) / 7;
+		double average = (2 * (this.firstSemesterSixWeeksAverages.get(0) + this.firstSemesterSixWeeksAverages.get(1) + this.firstSemesterSixWeeksAverages(2)) + this.midterm) / 7;
 
 		return GPA.getScaled((int) Math.round(average));
 	}
 
 	public double getSecondSemesterGPA()
 	{
-		double average = (2 * (secondSemesterSixWeeksAverages.get(0) + secondSemesterSixWeeksAverages.get(1) + secondSemesterSixWeeksAverages(2)) + finalExam) / 7;
+		double average = (2 * (this.secondSemesterSixWeeksAverages.get(0) + this.secondSemesterSixWeeksAverages.get(1) + this.secondSemesterSixWeeksAverages(2)) + this.finalExam) / 7;
 
 		return GPA.getScaled((int) Math.round(average));
 	}
 
 	public String toString()
 	{
-		return "Name: " + name + "\n1st Semester: " + firstSemesterSixWeekAverages.get(0) + ", " + firstSemesterSixWeekAverages.get(1) + ", " + firstSemesterSixWeekAverages.get(2) + "\n2nd Semester: " + secondSemesterSixWeekAverages.get(0) + ", " + secondSemesterSixWeekAverages.get(1) + ", " + secondSemesterSixWeekAverages.get(2);
+		return "Name: " + this.name + "\nLevel: " + this.level + "\n1st Semester: " + this.firstSemesterSixWeekAverages.get(0) + ", " + this.firstSemesterSixWeekAverages.get(1) + ", " + this.firstSemesterSixWeekAverages.get(2) + "\nMidterm: " + this.midterm + "\n2nd Semester: " + this.secondSemesterSixWeekAverages.get(0) + ", " + this.secondSemesterSixWeekAverages.get(1) + ", " + this.secondSemesterSixWeekAverages.get(2) + "\nFinal: " + this.finalExam;
 	}
 }
