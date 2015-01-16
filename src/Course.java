@@ -48,6 +48,20 @@ public class Course
 		this.finalExam = (int) Math.round(finalExam);
 	}
 
+	public double getFirstSemesterGPA()
+	{
+		double average = (2 * (firstSemesterSixWeeksAverages.get(0) + firstSemesterSixWeeksAverages.get(1) + firstSemesterSixWeeksAverages(2)) + midterm) / 7;
+
+		return GPA.getScaled((int) Math.round(average));
+	}
+
+	public double getSecondSemesterGPA()
+	{
+		double average = (2 * (secondSemesterSixWeeksAverages.get(0) + secondSemesterSixWeeksAverages.get(1) + secondSemesterSixWeeksAverages(2)) + finalExam) / 7;
+
+		return GPA.getScaled((int) Math.round(average));
+	}
+
 	public String toString()
 	{
 		return "Name: " + name + "\n1st Semester: " + firstSemesterSixWeekAverages.get(0) + ", " + firstSemesterSixWeekAverages.get(1) + ", " + firstSemesterSixWeekAverages.get(2) + "\n2nd Semester: " + secondSemesterSixWeekAverages.get(0) + ", " + secondSemesterSixWeekAverages.get(1) + ", " + secondSemesterSixWeekAverages.get(2);

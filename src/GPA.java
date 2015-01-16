@@ -4,6 +4,11 @@ import java.io.File;
 
 public class GPA
 {
+	public static double getScaled(int unscaled)
+	{
+		
+	}
+
 	public static void main(String args[])
 	{
 		File portfolio = new File("portfolio.dat");
