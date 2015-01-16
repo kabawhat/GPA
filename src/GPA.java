@@ -20,6 +20,7 @@ public class GPA
 
 			int courseCount = keyboard.nextInt();
 			ArrayList<Course> courses = new ArrayList<Course>();
+			ArrayList<Double> sixWeekAverages = new ArrayList<Double>();
 
 			for (int i = 1; i <= courseCount; i++) {
 				if (i == 1) {
@@ -34,6 +35,11 @@ public class GPA
 				if (i == 1) keyboard.nextLine(); // Picks up inevitable newline character (\n). Not really sure why it only affects the first iteration, though...
 				String courseName = keyboard.nextLine();
 				course.setName(courseName);
+
+				System.out.print("1st 6 weeks average? ");
+				if (i == 1) keyboard.nextDouble(); // Picks up inevitable newline character (\n). Not really sure why it only affects the first iteration, though...
+				double courseSixWeeksAverage = keyboard.nextDouble();
+				sixWeekAverages.add(courseSixWeeksAverage);
 			}
 		} else { // Existing "user" with a portfolio.
 
