@@ -32,14 +32,15 @@ public class GPA
 				Course course = new Course();
 
 				System.out.print("What was this course called? ");
-				if (i == 1) keyboard.nextLine(); // Picks up inevitable newline character (\n). Not really sure why it only affects the first iteration, though...
+				keyboard.nextLine(); // Picks up inevitable newline character (\n).
 				String courseName = keyboard.nextLine();
 				course.setName(courseName);
 
-				System.out.print("1" + Number.getEnding(i) + " 6 weeks average? ");
-				if (i == 1) keyboard.nextDouble(); // Picks up inevitable newline character (\n). Not really sure why it only affects the first iteration, though...
-				double courseSixWeeksAverage = keyboard.nextDouble();
-				sixWeekAverages.add(courseSixWeeksAverage);
+				for (int j = 1; j <= 6; j++) {
+					System.out.print(j + Number.getEnding(j) + " 6 weeks average? ");
+					double courseSixWeeksAverage = keyboard.nextDouble();
+					sixWeekAverages.add(courseSixWeeksAverage);
+				}
 			}
 		} else { // Existing "user" with a portfolio.
 
