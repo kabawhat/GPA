@@ -52,6 +52,8 @@ public class GPA
 
 				course.setFirstSemesterSixWeeksAverages(firstSemesterSixWeekAverages);
 				course.setSecondSemesterSixWeekAverages(secondSemesterSixWeekAverages);
+
+				System.out.println("-\n" + course + "\n\n");
 			}
 		} else { // Existing "user" with a portfolio.
 
