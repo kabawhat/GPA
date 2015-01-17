@@ -56,11 +56,11 @@ public class GPA
 		ArrayList<Double> firstSemesterSixWeekAverages = new ArrayList<Double>();
 		ArrayList<Double> secondSemesterSixWeekAverages = new ArrayList<Double>();
 
+		Scanner keyboard = new Scanner(System.in);
 		for (int i = 1; i <= courseCount; i++) {
 			Course course = new Course();
 
 			System.out.print("What is this course called? ");
-			keyboard.nextLine(); // Picks up inevitable newline character (\n).
 			String courseName = keyboard.nextLine();
 			course.setName(courseName);
 
@@ -96,7 +96,7 @@ public class GPA
 			course.setFirstSemesterSixWeeksAverages(firstSemesterSixWeekAverages);
 			course.setSecondSemesterSixWeekAverages(secondSemesterSixWeekAverages);
 
-			System.out.println("-\n" + course + "\n\n");
+			System.out.print("\n\n-\n\n" + course);
 		}
 	}
 }

@@ -90,6 +90,6 @@ public class Course
 
 	public String toString()
 	{
-		return "Name: " + this.name + "\nLevel: " + this.level + "\n1st Semester: " + this.firstSemesterSixWeekAverages.get(0) + ", " + this.firstSemesterSixWeekAverages.get(1) + ", " + this.firstSemesterSixWeekAverages.get(2) + "\nMidterm: " + this.midterm + "\n2nd Semester: " + this.secondSemesterSixWeekAverages.get(0) + ", " + this.secondSemesterSixWeekAverages.get(1) + ", " + this.secondSemesterSixWeekAverages.get(2) + "\nFinal: " + this.finalExam + "\nFirst Semester GPA: " + this.getFirstSemesterGPA() + "\nSecond Semester GPA: " + this.getSecondSemesterGPA();
+		return "Name: " + this.name + "\nLevel: " + this.level + "\n1st Semester: " + this.firstSemesterSixWeekAverages.get(0) + ", " + this.firstSemesterSixWeekAverages.get(1) + ", " + this.firstSemesterSixWeekAverages.get(2) + "\nMidterm: " + this.midterm + "\n2nd Semester: " + this.secondSemesterSixWeekAverages.get(0) + ", " + this.secondSemesterSixWeekAverages.get(1) + ", " + this.secondSemesterSixWeekAverages.get(2) + "\nFinal: " + this.finalExam + "\n\nFirst Semester GPA: " + this.getFirstSemesterGPA() + "\nSecond Semester GPA: " + this.getSecondSemesterGPA() + "\nAverage GPA: " + ((this.getFirstSemesterGPA() + this.getSecondSemesterGPA()) / 2);
 	}
 }
