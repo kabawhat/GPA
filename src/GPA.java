@@ -96,7 +96,7 @@ public class GPA
 			course.setFirstSemesterSixWeeksAverages(firstSemesterSixWeekAverages);
 			course.setSecondSemesterSixWeekAverages(secondSemesterSixWeekAverages);
 
-			System.out.print("\n\n-\n\n" + course);
+			System.out.print("\n-\n\n" + course);
 		}
 	}
 }
