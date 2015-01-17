@@ -28,7 +28,7 @@ public class Course
 
 	public void setLevel(String level)
 	{
-		switch (level.toLowerCase) {
+		switch (level.toLowerCase()) {
 			case "ap": this.level                  = "AP";
 				break;
 			case "ib": this.level                  = "IB";
@@ -76,14 +76,14 @@ public class Course
 
 	public double getFirstSemesterGPA()
 	{
-		double average = (2 * (this.firstSemesterSixWeeksAverages.get(0) + this.firstSemesterSixWeeksAverages.get(1) + this.firstSemesterSixWeeksAverages(2)) + this.midterm) / 7;
+		double average = (2 * (this.firstSemesterSixWeekAverages.get(0) + this.firstSemesterSixWeekAverages.get(1) + this.firstSemesterSixWeekAverages.get(2)) + this.midterm) / 7;
 
 		return GPA.getScaled(this.level, (int) Math.round(average));
 	}
 
 	public double getSecondSemesterGPA()
 	{
-		double average = (2 * (this.secondSemesterSixWeeksAverages.get(0) + this.secondSemesterSixWeeksAverages.get(1) + this.secondSemesterSixWeeksAverages(2)) + this.finalExam) / 7;
+		double average = (2 * (this.secondSemesterSixWeekAverages.get(0) + this.secondSemesterSixWeekAverages.get(1) + this.secondSemesterSixWeekAverages.get(2)) + this.finalExam) / 7;
 
 		return GPA.getScaled(this.level, (int) Math.round(average));
 	}

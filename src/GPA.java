@@ -6,7 +6,7 @@ public class GPA
 {
 	public static double getScaled(String level, int unscaled)
 	{
-		double scaled;
+		double scaled = 0.0;
 
 		if (unscaled >= 97 && unscaled <= 100) {
 			scaled = 5.0;
@@ -80,7 +80,6 @@ public class GPA
 				course.setName(courseName);
 
 				System.out.print("Course level? (AP, IB, GT, Pre-AP, On Level) ");
-				keyboard.nextLine(); // Picks up inevitable newline character (\n).
 				String courseLevel = keyboard.nextLine();
 				course.setLevel(courseLevel);
 
