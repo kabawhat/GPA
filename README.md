@@ -1,4 +1,4 @@
-# *GPA*
+# GPA
 ### A tiny GPA calculator in Java
 
 *GPA* is a simple GPA calculator in Java, aimed toward students who are interested in calculating their GPA prior to the official release of their GPA.
