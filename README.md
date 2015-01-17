@@ -7,7 +7,7 @@ To use GPA, you must have Java accessible through the command line. If you can r
 
 ![v0.1.0](https://cloud.githubusercontent.com/assets/1139621/5786812/2a2e5f0e-9db1-11e4-896b-8cdcf7fb3e9a.png)
 
-If you'd like to contribute, just submit a pull request!
+If you'd like to contribute, just submit a pull request! [Here's a to-do list of upcomming features that you can work on](https://github.com/qw3rtman/GPA/blob/master/TODO.md). Feel free to come up with your own ideas as well.
 
 # License
 *GPA* is licensed under The MIT License. That means you can do anything you want with it as long as you give me (Nimit Kalra, <nimit@nimitkalra.com>) attribution and don't hold me liable for any damages.
