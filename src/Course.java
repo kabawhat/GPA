@@ -29,19 +29,23 @@ public class Course
 	public void setLevel(String level)
 	{
 		switch (level.toLowerCase) {
-			case "ap": this.level      = "AP";
+			case "ap": this.level                  = "AP";
 				break;
-			case "ib": this.level      = "IB";
+			case "ib": this.level                  = "IB";
+				break;
+			case "gt":
+			case "g/t":
+			case "gifted and talented": this.level = "GT";
 				break;
 			case "pre ap":
 			case "pre-ap":
-			case "preap": this.level   = "Pre-AP";
+			case "preap": this.level               = "Pre-AP";
 				break;
 			case "on level":
 			case "on-level":
-			case "onlevel": this.level = "On Level";
+			case "onlevel": this.level             = "On Level";
 				break;
-			default: this.level = "On Level";
+			default: this.level                    = "On Level";
 				break;
 		}
 	}
@@ -74,18 +78,18 @@ public class Course
 	{
 		double average = (2 * (this.firstSemesterSixWeeksAverages.get(0) + this.firstSemesterSixWeeksAverages.get(1) + this.firstSemesterSixWeeksAverages(2)) + this.midterm) / 7;
 
-		return GPA.getScaled((int) Math.round(average));
+		return GPA.getScaled(this.level, (int) Math.round(average));
 	}
 
 	public double getSecondSemesterGPA()
 	{
 		double average = (2 * (this.secondSemesterSixWeeksAverages.get(0) + this.secondSemesterSixWeeksAverages.get(1) + this.secondSemesterSixWeeksAverages(2)) + this.finalExam) / 7;
 
-		return GPA.getScaled((int) Math.round(average));
+		return GPA.getScaled(this.level, (int) Math.round(average));
 	}
 
 	public String toString()
 	{
-		return "Name: " + this.name + "\nLevel: " + this.level + "\n1st Semester: " + this.firstSemesterSixWeekAverages.get(0) + ", " + this.firstSemesterSixWeekAverages.get(1) + ", " + this.firstSemesterSixWeekAverages.get(2) + "\nMidterm: " + this.midterm + "\n2nd Semester: " + this.secondSemesterSixWeekAverages.get(0) + ", " + this.secondSemesterSixWeekAverages.get(1) + ", " + this.secondSemesterSixWeekAverages.get(2) + "\nFinal: " + this.finalExam;
+		return "Name: " + this.name + "\nLevel: " + this.level + "\n1st Semester: " + this.firstSemesterSixWeekAverages.get(0) + ", " + this.firstSemesterSixWeekAverages.get(1) + ", " + this.firstSemesterSixWeekAverages.get(2) + "\nMidterm: " + this.midterm + "\n2nd Semester: " + this.secondSemesterSixWeekAverages.get(0) + ", " + this.secondSemesterSixWeekAverages.get(1) + ", " + this.secondSemesterSixWeekAverages.get(2) + "\nFinal: " + this.finalExam + "\nFirst Semester GPA: " + this.getFirstSemesterGPA() + "\nSecond Semester GPA: " + this.getSecondSemesterGPA();
 	}
 }
